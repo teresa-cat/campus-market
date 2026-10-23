@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f7f2">
+    <title>Campus Secondhand Marketplace</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="Campus Market home">
+        <span class="brand-mark" aria-hidden="true">cm<span>.</span></span>
+        <span class="brand-name">campus<span>market</span></span>
+      </a>
+      <label class="search-wrap">
+        <span class="search-icon" aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" placeholder="Search for anything..." autocomplete="off">
+        <kbd>⌘ K</kbd>
+      </label>
+      <nav class="header-actions" aria-label="Main navigation">
+        <button class="nav-link" id="my-listings-button">My listings</button>
+        <button class="button button-dark header-post" id="post-button"><span aria-hidden="true">＋</span> Post an item</button>
+        <button class="avatar-button" id="account-button" aria-label="Sign in to your account"><span>↗</span></button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS, CIRCULATED</div>
+          <h1>Good finds.<br><span>Good for campus.</span></h1>
+          <p>Buy, sell, and pass it on.<br> Find what you need and give what you no longer use a second life.</p>
+          <a class="hero-link" href="#marketplace">Explore the marketplace <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a student carrying a tote bag">
+          <div class="sun-shape"></div>
+          <div class="hero-sticker sticker-one">GOOD AS<br>NEW <span>✳</span></div>
+          <div class="hero-sticker sticker-two"><span>↗</span> LOCAL<br>FINDS</div>
+          <div class="illustration-ground"></div>
+          <div class="plant plant-left"><i></i><i></i><i></i><b></b></div>
+          <div class="student">
+            <div class="student-hair"></div>
+            <div class="student-head"><span></span></div>
+            <div class="student-neck"></div>
+            <div class="student-shirt"></div>
+            <div class="student-arm"></div>
+            <div class="student-pants"></div>
+            <div class="student-leg leg-one"></div>
+            <div class="student-leg leg-two"></div>
+            <div class="student-shoe shoe-one"></div>
+            <div class="student-shoe shoe-two"></div>
+            <div class="student-tote"><span>SECOND<br>CHANCES</span></div>
+          </div>
+          <div class="plant plant-right"><i></i><i></i><i></i><b></b></div>
+          <span class="art-spark spark-one">✳</span><span class="art-spark spark-two">✦</span>
+        </div>
+        <div class="hero-footnote"><span>01 — 04</span><span>Student-to-student, always.</span></div>
+      </section>
+
+      <section class="market-section" id="marketplace">
+        <div class="category-row">
+          <button class="category-pill active" data-category="All"><span>✳</span> All finds <small id="all-count"></small></button>
+          <button class="category-pill" data-category="Clothes"><span>♧</span> Clothes</button>
+          <button class="category-pill" data-category="Home & Living"><span>⌂</span> Home &amp; Living</button>
+          <button class="category-pill" data-category="Electronics"><span>▱</span> Electronics</button>
+          <button class="category-pill" data-category="Books & Supplies"><span>▤</span> Books &amp; Supplies</button>
+        </div>
+
+        <div class="section-heading">
+          <div><span class="eyebrow">THE GOOD STUFF, RIGHT HERE</span><h2 id="listing-heading">Find your next favorite.</h2></div>
+          <div class="listing-tools"><span id="results-count"></span><select id="sort-select" aria-label="Sort listings"><option value="recent">Just listed</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option></select></div>
+        </div>
+        <div id="listing-grid" class="listing-grid" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state hidden"><div>⌕</div><h3>No finds this time.</h3><p>Try another search or category to keep exploring.</p><button class="text-button" id="clear-filters">Clear filters <span>→</span></button></div>
+      </section>
+
+      <section class="impact-banner">
+        <div class="impact-symbol">↗</div>
+        <div><span class="eyebrow">A LITTLE LESS WASTE. A LOT MORE GOOD.</span><h2>Secondhand is a good look on everyone.</h2><p>Every campus handoff keeps useful things in use, and good finds close to home.</p></div>
+        <button class="button button-light" id="donate-info-button">How it works <span>→</span></button>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="#"><span class="brand-mark">cm<span>.</span></span><span class="brand-name">campus<span>market</span></span></a><span>Made for campus. Better in circulation.</span><span>Meet in public. Trade thoughtfully.</span></footer>
+
+    <div class="modal-backdrop hidden" id="modal-backdrop">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="modal-close" aria-label="Close dialog">×</button>
+        <div id="modal-content"></div>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
